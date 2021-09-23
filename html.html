@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+    <link rel="stylesheet" type="text/css" href="css.css">
+  </head>
+  <body>
+      <section>
+        <div class="box">
+          <div class="square" style="--i:0;"></div>
+          <div class="square" style="--i:1;"></div>
+          <div class="square" style="--i:2;"></div>
+          <div class="square" style="--i:3;"></div>
+          <div class="square" style="--i:4;"></div>
+          <div class="square" style="--i:5;"></div>
+          
+         <div class="container"> 
+            <div class="form" id="login--view"> 
+              <h2>Infinity CSR</h2>
+              <form action="">
+                  <div class="inputBx">
+                      <input type="text" required="required">
+                      <span>Login</span>
+                      <img src="https://www.flaticon.com/svg/static/icons/svg/709/709699.svg" alt="user">
+                  </div>
+
+                  <div class="inputBx password">
+                      <input id="password-input" type="password" name="password" required="required">
+                      <span>Password</span>
+                      <a href="#" class="password-control" onclick="return show_hide_password(this);"></a>
+                      <img src="https://www.flaticon.com/svg/static/icons/svg/1828/1828471.svg" alt="lock">
+                  </div>
+
+                  <div class="inputBx">
+                      <input type="submit" value="Log in" disabled> 
+                  </div>
+              </form>
+              <p>Forgot password? <a href="#" onclick="forgot_page_view()">Click Here</a></p>
+            </div>
+
+            <!-- Forgot Form area -->
+            <div class="form" id="forgot--view"> 
+              <h2>Password Recover</h2>
+              <form action="">
+                  <div class="inputBx">
+                      <input type="text" required="required">
+                      <span>Email</span>
+                      <img src="https://www.flaticon.com/svg/static/icons/svg/709/709699.svg" alt="user">
+                  </div>
+
+                  <div class="inputBx">
+                      <input type="submit" value="Submit" disabled> 
+                      <p>Go to Login Page? <a href="javascript:void(0)" onclick="login_page_view()">Click Here</a></p>
+                  </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <script>
+    function show_hide_password(target){
+      var input = document.getElementById('password-input');
+      if (input.getAttribute('type') == 'password') {
+        target.classList.add('view');
+        input.setAttribute('type', 'text');
+      } else {
+        target.classList.remove('view');
+        input.setAttribute('type', 'password');
+      }
+      return false;
+    }
+
+    function forgot_page_view(){
+      document.getElementById('forgot--view').style.display = 'block';
+      document.getElementById('login--view').style.display = 'none';
+    }
+
+    function login_page_view(){
+      document.getElementById('login--view').style.display = 'block';
+      document.getElementById('forgot--view').style.display = 'none';
+    }
+    </script>
+  </body>
+</html>
